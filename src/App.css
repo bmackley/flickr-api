@@ -1,9 +1,6 @@
 .App {
   text-align: center;
   display: grid;
-  grid-template-columns: 256px calc(100vw - 256px);
-  grid-template-rows: 60px calc(100% - 60px);
-  grid-template: 2 1 1;
 }
 .navbar {
   grid-column: 1/3;
@@ -17,5 +14,10 @@
   background-color: red;
 }
 .contentArea {
+  width: 100vw;
   background-color: gray;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
 }
