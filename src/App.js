@@ -8,7 +8,6 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar></Navbar>
-        <div className="leftMenu">Hid</div>
         <Content>Content</Content>
       </div>
     );
