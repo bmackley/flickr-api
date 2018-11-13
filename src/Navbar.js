@@ -4,7 +4,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <div className="navbar">
-        <h1>Hello</h1>
+        <h1>NASA Flickr Viewer</h1>
       </div>
     );
   }
