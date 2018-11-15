@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Parser from 'html-react-parser';
+import Card from './Card'
 import './Content.css'
 
 class Content extends Component {
@@ -47,15 +48,13 @@ class Content extends Component {
   render() {
     return (
       <div className="contentArea">
-      <input id="searchTermBox" type="text" />
+      <input id="searchTermBox" type="text" placeholder="Filter photos by keyword"/>
       <button onClick={this.handleSearchClick}>Search</button>
-      {this.state.photos.map((photo) =>
-          <div key={photo.id} className="photo-card">
-            <img src= {photo.url} alt="title" />
-            <figcaption className="image-title">{photo.title} </figcaption>
-            <p className="image-description">{Parser(photo.description._content)}</p>
-          </div>
-       )}
+      <div id="card-collection">
+        {this.state.photos.map((photo) =>
+          <Card photo={photo}/>
+         )}
+      </div>
        <button onClick={this.handleLoadMoreClick}> Load More Photos </button>
       </div>
     );
