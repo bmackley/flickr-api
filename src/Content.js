@@ -61,7 +61,9 @@ class Content extends Component {
       );
     }else{
         return (
-          <p>Loading ...</p>
+          <div className="contentArea">
+            Loading ...
+          </div>
         )
     }
 
