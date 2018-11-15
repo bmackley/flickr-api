@@ -19,3 +19,13 @@ img{
    height: 100%;
    object-fit: contain;
 }
+
+.contentArea {
+  width: 100vw;
+  background-color: lightgray;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-bottom: 30px;
+}
