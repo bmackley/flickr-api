@@ -13,11 +13,3 @@
 .leftMenu {
   background-color: red;
 }
-.contentArea {
-  width: 100vw;
-  background-color: gray;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-}
