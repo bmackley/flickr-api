@@ -4,6 +4,7 @@
   width: 100vw;
   background-color: lightgray;
   padding: 30px;
+  min-height: calc(100vh - 60px);
 }
 
 #card-collection{

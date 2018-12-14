@@ -6,7 +6,7 @@ import './Content.css'
 class Content extends Component {
   constructor(props) {
     super(props);
-    this.state = {photos: [], nextPageToGet: 1};
+    this.state = {photos: [], nextPageToGet: 1, loaded: false};
     this.handleLoadMoreClick = this.handleLoadMoreClick.bind(this);
     this.handleSearchClick = this.handleSearchClick.bind(this);
 
@@ -36,7 +36,7 @@ class Content extends Component {
     const newPhotosArray = [...this.state.photos, ...photosWithUrls];
     const nextPage = this.state.nextPageToGet + 1;
     this.setState({photos: newPhotosArray, nextPageToGet: nextPage});
-
+    this.setState({loaded: true});
   }
 
   filterPhotos(filterValue, photosArray){
@@ -46,18 +46,27 @@ class Content extends Component {
   }
 
   render() {
-    return (
-      <div className="contentArea">
-      <input id="searchTermBox" type="text" placeholder="Filter photos by keyword"/>
-      <button onClick={this.handleSearchClick}>Search</button>
-      <div id="card-collection">
-        {this.state.photos.map((photo) =>
-          <Card photo={photo}/>
-         )}
-      </div>
-       <button onClick={this.handleLoadMoreClick}> Load More Photos </button>
-      </div>
-    );
+    if(this.state.loaded){
+      return (
+        <div className="contentArea">
+        <input id="searchTermBox" type="text" placeholder="Filter photos by keyword"/>
+        <button onClick={this.handleSearchClick}>Search</button>
+        <div id="card-collection">
+          {this.state.photos.map((photo) =>
+            <Card photo={photo}/>
+           )}
+        </div>
+         <button onClick={this.handleLoadMoreClick}> Load More Photos </button>
+        </div>
+      );
+    }else{
+        return (
+          <div className="contentArea">
+            Loading ...
+          </div>
+        )
+    }
+
   }
 }
 export default Content;
